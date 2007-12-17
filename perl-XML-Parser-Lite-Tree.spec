@@ -14,7 +14,6 @@ Url:		http://search.cpan.org/dist/%{pkgname}/
 BuildRequires:	perl-devel 
 BuildRequires:  perl(SOAP::Lite)
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-buildroot/
 Requires:	perl
 
 %description
