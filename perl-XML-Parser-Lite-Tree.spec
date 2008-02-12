@@ -23,7 +23,7 @@ differ from other XML tree generators? By using XML::Parser::Lite, which is a
 pure perl XML parser. Using this module you can tree-ify simple XML without
 having to compile any C.
 
-Each node contains a "type" key, one of "root", "tag" and "data". "root" is the 
+Each node contains a "type" key, one of "root", "tag" and "data". "root" is the
 document root, and only contains an array ref "children". "tag" represents a
 normal tag, and contains an array ref "children", a hash ref "attributes" and a
 string "name". "data" nodes contain only a "content" string.
