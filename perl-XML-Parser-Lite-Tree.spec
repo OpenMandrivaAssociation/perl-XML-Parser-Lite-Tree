@@ -1,7 +1,7 @@
-%define pkgname XML-Parser-Lite-Tree
-%define name	perl-%{pkgname}
-%define	version	0.03
-%define	release	%mkrel 7
+%define module XML-Parser-Lite-Tree
+%define name	perl-%{module}
+%define	version	0.05
+%define	release	%mkrel 1
 
 Name:		%{name}
 Summary:	Lightweight XML tree builder
@@ -9,13 +9,11 @@ Version:	%{version}
 Release:	%{release}
 License:	GPL or Artistic
 Group:		Development/Perl
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/XML/%{pkgname}-%{version}.tar.bz2
-Url:		http://search.cpan.org/dist/%{pkgname}/
-BuildRequires:	perl-devel 
+Url:		http://search.cpan.org/dist/%{module}/
+Source:     http://www.cpan.org/modules/by-module/XML/%{module}-%{version}.tar.gz
 BuildRequires:  perl(SOAP::Lite)
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-buildroot/
-Requires:	perl
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This is a singleton class for parsing XML into a tree structure. How does this
@@ -29,7 +27,7 @@ normal tag, and contains an array ref "children", a hash ref "attributes" and a
 string "name". "data" nodes contain only a "content" string.
 
 %prep
-%setup -q -n %{pkgname}-%{version} 
+%setup -q -n %{module}-%{version} 
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -39,14 +37,14 @@ make
 make test
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 %makeinstall_std
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%{perl_vendorlib}/XML/Parser/Lite/Tree.pm
+%{perl_vendorlib}/XML
 %{_mandir}/*/*
 
