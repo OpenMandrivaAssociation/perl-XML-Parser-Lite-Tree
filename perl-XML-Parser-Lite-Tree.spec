@@ -1,12 +1,12 @@
 %define module XML-Parser-Lite-Tree
 %define name	perl-%{module}
 %define	version	0.06
-%define	release	%mkrel 1
+%define	release	%mkrel 2
 
 Name:		%{name}
-Summary:	Lightweight XML tree builder
 Version:	%{version}
 Release:	%{release}
+Summary:	Lightweight XML tree builder
 License:	GPL or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{module}/
@@ -39,6 +39,8 @@ make test
 %install
 rm -rf %{buildroot}
 %makeinstall_std
+# duplicated from SOAP::Lite
+rm -f %{buildroot}%{perl_vendorlib}/XML/Parser/Lite.pm
 
 %clean
 rm -rf %{buildroot}
