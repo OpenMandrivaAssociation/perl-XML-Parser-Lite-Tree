@@ -1,9 +1,9 @@
 %define upstream_name    XML-Parser-Lite-Tree
-%define	upstream_version 0.12
+%define	upstream_version 0.14
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 
 Summary:	Lightweight XML tree builder
 License:	GPL+ or Artistic
