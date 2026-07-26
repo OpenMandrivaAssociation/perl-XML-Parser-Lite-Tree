@@ -1,15 +1,13 @@
 %define upstream_name    XML-Parser-Lite-Tree
-%define	upstream_version 0.14
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	0.14
+Release:	6
 
 Summary:	Lightweight XML tree builder
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/XML-Parser-Lite-Tree
-Source0:	https://cpan.metacpan.org/authors/id/I/IA/IAMCAL/XML-Parser-Lite-Tree-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/I/IA/IAMCAL/XML-Parser-Lite-Tree-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -28,7 +26,7 @@ normal tag, and contains an array ref "children", a hash ref "attributes" and a
 string "name". "data" nodes contain only a "content" string.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -74,9 +72,7 @@ rm -f %{buildroot}%{perl_vendorlib}/XML/Parser/Lite.pm
 
 * Wed Aug 05 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 0.80.0-1mdv2010.0
 + Revision: 410068
-- rebuild using %%perl_convert_version
-
-* Sat Oct 11 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.08-1mdv2009.1
+- rebuild using %0.14 Sat Oct 11 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.08-1mdv2009.1
 + Revision: 292360
 - update to new version 0.08
 
